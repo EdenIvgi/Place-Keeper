@@ -9,7 +9,7 @@ function renderPlaces() {
     const elList = document.getElementById('placeList')
 
     if (!places.length) {
-        elList.innerHTML = '<li>No places yet</li>'
+        elList.innerHTML = '<li>No places saved</li>'
         return
     }
 
