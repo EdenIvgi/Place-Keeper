@@ -14,7 +14,7 @@ function _createPlace(name, lat, lng, zoom) {
 
 function _createPlaces() {
     return [
-        _createPlace('Puki\'s House', 32.1416, 34.831213, 15),
+        _createPlace('Shahar\'s House', 32.1416, 34.831213, 15),
         _createPlace('Library', 32.066157, 34.777819, 14)
     ]
 }
