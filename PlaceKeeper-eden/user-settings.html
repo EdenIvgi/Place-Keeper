@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Settings</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="places.html">Places</a></li>
+            <li><a href="user-settings.html">User Settings</a></li>
+        </ul>
+    </nav>
+
+    <form onsubmit="onSubmit(event)">
+        <div>
+            <label>Email</label>:
+            <input type="email" name="userEmail" placeholder="Enter your email" required />
+        </div>
+
+        <div>
+            <label>Age</label>:
+            <input type="range" name="ageRange" min="18" max="120" oninput="onAgeInput(this.value)" />
+            <span id="ageVal">18</span>
+        </div>
+
+        <div>
+            <label>Text Color</label>:
+            <input type="color" name="userTxtColor" />
+        </div>
+
+        <div>
+            <label>Background Color</label>:
+            <input type="color" name="userBgColor" />
+        </div>
+
+        <div>
+            <label>Birth Date</label>:
+            <input type="date" name="birthDate" />
+        </div>
+
+        <div>
+            <label>Birth Time</label>:
+            <input type="time" name="birthTime" />
+        </div>
+
+        <button>Save</button>
+    </form>
+
+    <script src="js/util.service.js"></script>
+    <script src="js/user.service.js"></script>
+    <script src="js/place.service.js"></script>
+    <script src="js/place.controller.js"></script>
+</body>
+
+</html>
