@@ -21,6 +21,10 @@ function renderPlaces() {
             <button onclick="onRemovePlace('${place.id}')">❌ Remove</button>
         </li>
     `).join('')
+
+    places.forEach(place => {
+        addMarker({ lat: place.lat, lng: place.lng })
+    })
 }
 
 function onRemovePlace(placeId) {
