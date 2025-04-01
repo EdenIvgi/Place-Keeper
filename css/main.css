@@ -1,9 +1,146 @@
-h1{
-    font-size: 100px;
-    text-align: center;
-    
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../img/globe.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
 }
 
-p{
-    text-align: center;
+.overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+h1 {
+    font-size: 6rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    gap: 1.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #1c5980;
+}
+
+
+form {
+    max-width: 500px;
+    margin: 6rem auto;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.65); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.3rem;
+    font-weight: bold;
+}
+
+input,
+button,
+select {
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+   
+}
+
+input[type="color"] {
+    padding: 0.2rem;
+    height: 2.5rem;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+ul#placeList {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+ul#placeList li {
+    background-color: #fff;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul#placeList button {
+    width: auto;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 4px;
+}
+
+ul#placeList button:hover {
+    background-color: #c0392b;
+}
+
+#map {
+    max-width: 900px;
+   margin: 6rem auto;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+nav a.active {
+    color: #fff;
+    background-color: #3498db;
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
 }

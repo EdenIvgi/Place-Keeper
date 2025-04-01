@@ -1,7 +1,7 @@
 'use strict'
 
 const STORAGE_KEY = 'placesDB'
-let gPlaces = _loadPlaces()
+let gPlaces = loadPlaces()
 
 function _createPlace(name, lat, lng, zoom) {
     return {
@@ -20,7 +20,7 @@ function _createPlaces() {
     ]
 }
 
-function _loadPlaces() {
+function loadPlaces() {
     return JSON.parse(localStorage.getItem(STORAGE_KEY)) || _createPlaces()
 }
 
