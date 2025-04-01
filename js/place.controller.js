@@ -1,4 +1,5 @@
 'use strict'
+let gMap
 
 function onInit() {
     initMap()
@@ -27,14 +28,32 @@ function onRemovePlace(placeId) {
     renderPlaces()
 }
 
-
-let gMap
-
 async function initMap() {
     const { Map } = await google.maps.importLibrary("maps")
 
     gMap = new Map(document.getElementById("map"), {
-        center: { lat: 32.0853, lng: 34.7818 },
+        center: { lat: 29.557669, lng: 34.951923 },
         zoom: 12,
     })
+
+    gMap.addListener('click', ev => {
+        const name = prompt('Place name?', 'Place 1')
+        if (!name) return
+
+        const lat = ev.latLng.lat()
+        const lng = ev.latLng.lng()
+
+        addPlace(name, lat, lng, gMap.getZoom())
+        renderPlaces()
+        addMarker({ lat, lng })
+    })
+
 }
+
+function addMarker({ lat, lng }) {
+    new google.maps.Marker({
+        position: { lat, lng },
+        map: gMap,
+    })
+}
+
