@@ -1,6 +1,7 @@
 'use strict'
 
 function onInit() {
+    initMap()
     renderPlaces()
 }
 
@@ -24,4 +25,16 @@ function renderPlaces() {
 function onRemovePlace(placeId) {
     removePlace(placeId)
     renderPlaces()
+}
+
+
+let gMap
+
+async function initMap() {
+    const { Map } = await google.maps.importLibrary("maps")
+
+    gMap = new Map(document.getElementById("map"), {
+        center: { lat: 32.0853, lng: 34.7818 },
+        zoom: 12,
+    })
 }
