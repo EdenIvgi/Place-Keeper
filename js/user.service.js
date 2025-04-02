@@ -21,12 +21,16 @@ function onSubmit(ev) {
 
     console.log('Saving user data:', userData)
     userService.save(userData)
-    applyUserPreferences(userData)
+    applyUserPreferences(userData.txtColor, userData.bgColor)
 }
 
-function applyUserPreferences(userData) {
-    document.body.style.color = userData.txtColor
-    document.body.style.backgroundColor = userData.bgColor
+function applyUserPreferences(txtColor, bgColor) {
+    const isSettingsPage = window.location.pathname.includes('user-settings.html')
+    if (!isSettingsPage) return
+
+    document.body.style.color = txtColor
+    document.body.style.backgroundColor = bgColor
+    document.body.style.backgroundImage = 'none'
 }
 
 const userService = {
@@ -44,9 +48,17 @@ function load() {
 
 window.addEventListener('load', () => {
     const userData = userService.load()
-    if (userData) applyUserPreferences(userData)
+    if (userData) applyUserPreferences(userData.txtColor, userData.bgColor)
+
 })
 
 function onAgeInput(val) {
-    document.getElementById('ageVal').innerText = val
+    const el = document.querySelector('.age-val')
+    if (el) el.innerText = val
+}
+
+function resetUserSettings() {
+    localStorage.removeItem('userPrefs')
+    document.body.removeAttribute('style')
+    location.reload()
 }

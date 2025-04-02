@@ -26,7 +26,7 @@
         <div>
             <label>Age</label>:
             <input type="range" name="ageRange" min="18" max="120" oninput="onAgeInput(this.value)" />
-            <span id="ageVal">18</span>
+            <span class="age-val">18</span>
         </div>
 
         <div>
@@ -51,6 +51,8 @@
 
         <button>Save</button>
     </form>
+
+    <button onclick="resetUserSettings()">Reset Style</button>
 
     <script src="js/util.service.js"></script>
     <script src="js/user.service.js"></script>

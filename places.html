@@ -40,17 +40,37 @@
         });
     </script>
 
+    <div class="places-container">
+        <div class="map"></div>
 
-    <div id="map" style="height: 400px; width: 100%; margin-bottom: 1rem;"></div>
+        <div class="places-panel">
+            <h2>Your Places</h2>
+            <ul class="place-list"></ul>
+        </div>
+    </div>
 
-    <ul id="placeList"></ul>
+    <div class="coords-modal">
+        <div class="content">
+            <button onclick="closeModal()" class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <div class="new-place-modal">
+        <div class="modal-content">
+            <button onclick="closeNewPlaceModal()" class="close-btn">&times;</button>
+            <h3>Save New Place</h3>
+            <input type="text" placeholder="Enter place name..." class="new-place-input" />
+            <div class="modal-actions">
+                <button onclick="onSaveNewPlace()">Save</button>
+                <button onclick="closeNewPlaceModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/util.service.js"></script>
     <script src="js/user.service.js"></script>
     <script src="js/place.service.js"></script>
     <script src="js/place.controller.js"></script>
 </body>
-
-</html>
 
 </html>
